@@ -39,6 +39,9 @@ namespace QuantConnect.Report
                 Config.MergeCommandLineArgumentsWithConfiguration(ReportArgumentParser.ParseArguments(args));
             }
 
+            // Set config file
+            Config.SetConfigurationFile(@"../../report-config.json");
+
             // initialize required lean handlers
             LeanEngineAlgorithmHandlers.FromConfiguration(Composer.Instance);
             var name = Config.Get("strategy-name");

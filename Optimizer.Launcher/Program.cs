@@ -37,6 +37,8 @@ namespace QuantConnect.Optimizer.Launcher
             {
                 Config.MergeCommandLineArgumentsWithConfiguration(OptimizerArgumentParser.ParseArguments(args));
             }
+            // Set config file
+            Config.SetConfigurationFile(@"../../optimize-config.json");
 
             using var endedEvent = new ManualResetEvent(false);
 
